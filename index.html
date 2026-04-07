@@ -12,7 +12,6 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
 
 <style>
-/* ---------- COLORS ---------- */
 :root{
   --bg:#fff7fb;
   --text:#333;
@@ -26,7 +25,6 @@
   --card:#1e1e1e;
 }
 
-/* ---------- GLOBAL ---------- */
 body{
   margin:0;
   font-family:'Poppins',sans-serif;
@@ -35,12 +33,8 @@ body{
   transition:.3s;
 }
 
-a{
-  color:inherit;
-  text-decoration:none;
-}
+a{ color:inherit; text-decoration:none; }
 
-/* ---------- HEADER ---------- */
 header{
   background:var(--accent);
   color:white;
@@ -54,20 +48,10 @@ header h1{
   margin:5px 0;
 }
 
-header p{
-  margin:5px 0;
-  font-size:1em;
-}
+header p{ margin:5px 0; font-size:1em; }
 
-.socials{
-  margin:10px 0;
-}
-
-.socials a{
-  color:white;
-  margin:0 10px;
-  font-size:24px;
-}
+.socials{ margin:10px 0; }
+.socials a{ color:white; margin:0 10px; font-size:24px; }
 
 button.dark-toggle{
   margin-top:10px;
@@ -77,14 +61,12 @@ button.dark-toggle{
   cursor:pointer;
 }
 
-/* ---------- CONTAINER ---------- */
 .container{
   max-width:900px;
   margin:auto;
   padding:20px;
 }
 
-/* ---------- BLOG CARDS ---------- */
 .card{
   background:var(--card);
   padding:20px;
@@ -96,11 +78,8 @@ button.dark-toggle{
   overflow:hidden;
 }
 
-.card:hover{
-  transform:scale(1.02);
-}
+.card:hover{ transform:scale(1.02); }
 
-/* ---------- BLOG CONTENT ---------- */
 .blog-content{
   display:none;
   margin-top:15px;
@@ -109,10 +88,9 @@ button.dark-toggle{
 
 @keyframes slideDown{
   from{opacity:0; max-height:0;}
-  to{opacity:1; max-height:500px;}
+  to{opacity:1; max-height:1000px;}
 }
 
-/* ---------- FORM ---------- */
 input, textarea{
   width:100%;
   padding:10px;
@@ -133,32 +111,19 @@ button.send{
   width:100%;
 }
 
-button.send:hover{
-  opacity:.85;
-}
+button.send:hover{ opacity:.85; }
 
-/* ---------- FOOTER ---------- */
 footer{
   text-align:center;
   padding:20px;
   opacity:.7;
 }
 
-/* ---------- RESPONSIVE ---------- */
 @media(max-width:600px){
-  header h1{
-    font-size:2em;
-  }
-  header p{
-    font-size:0.9em;
-  }
-  .socials a{
-    font-size:20px;
-    margin:0 5px;
-  }
-  .card{
-    padding:15px;
-  }
+  header h1{ font-size:2em; }
+  header p{ font-size:0.9em; }
+  .socials a{ font-size:20px; margin:0 5px; }
+  .card{ padding:15px; }
 }
 </style>
 </head>
@@ -180,33 +145,72 @@ footer{
 
 <div class="container">
 
-<!-- BLOG CARD 1 -->
+<!-- BLOG 1 -->
 <div class="card" onclick="toggleBlog('blog1')">
-<h2>✨ Choosing a Course Without Panic</h2>
+<h2>🌱 Choosing Your College Course Without Losing Your Mind</h2>
 <div id="blog1" class="blog-content">
-<p>
-Feeling pressured about college choices? You're not alone. Many students struggle
-between passion, practicality, and family expectations.
-</p>
-<p>
-Start by identifying your interests, strengths, and values. Remember: your course
-is a starting point, not your entire future.
-</p>
+<p>Picking a college course can feel like choosing your entire future in one click… no pressure, right?</p>
+<p>Based on research, your decision is actually shaped by three big things: your interests, your family, and your situation (especially finances). So if you're feeling confused, that’s completely normal.</p>
+<p>✨ Quick tips to make it easier:</p>
+<ul>
+<li>Know yourself first – What are you good at? What do you enjoy? Your skills + interests matter most.</li>
+<li>Listen, don’t absorb everything – Family advice is helpful, but it shouldn’t control your choice.</li>
+<li>Think practical too – Some students choose courses that offer stable jobs or financial security.</li>
+<li>Ask for guidance – Teachers, friends, and even seniors can help you see options clearly.</li>
+</ul>
+<p>💡 The best course isn’t just what sounds impressive—it’s what fits you. At the end of the day, you’re the one studying it, not anyone else.</p>
 </div>
 </div>
 
-<!-- BLOG CARD 2 -->
+<!-- BLOG 2 -->
 <div class="card" onclick="toggleBlog('blog2')">
-<h2>📚 Student Survival Tips</h2>
+<h2>🔍 How to Know If a Career is Actually Right for You</h2>
 <div id="blog2" class="blog-content">
-<p>
-Student life can be overwhelming. Balancing academics, friendships, and expectations
-is hard.
-</p>
-<p>
-Take breaks, sleep properly, and avoid comparing your progress to others.
-Growth looks different for everyone.
-</p>
+<p>Ever thought you wanted a career… then suddenly felt unsure? Yeah, that’s more common than you think.</p>
+<p>A good career match happens when your skills, interests, and personality align with the job. So how do you check?</p>
+<p>👀 Try this mini self-check:</p>
+<ul>
+<li>Interest check: Do you actually enjoy learning about it?</li>
+<li>Skill check: Are you willing (and able) to improve in it?</li>
+<li>Reality check: Can you see yourself doing this long-term?</li>
+</ul>
+<p>🧠 Also remember:</p>
+<ul>
+<li>Confidence matters—people often choose careers they believe they can succeed in.</li>
+<li>Your environment (family, friends, school) can influence your choices more than you realize.</li>
+</ul>
+<p>🚨 Red flag: If you’re only choosing it because of pressure, money, or expectations… pause. That’s not compatibility—that’s survival mode.</p>
+<p>💬 Real compatibility feels like: “I’m nervous, but I want this.”</p>
+</div>
+</div>
+
+<!-- BLOG 3 -->
+<div class="card" onclick="toggleBlog('blog3')">
+<h2>🌍 Why Choosing a Career is More Complicated Than It Looks</h2>
+<div id="blog3" class="blog-content">
+<p>Let’s be real—choosing a career isn’t just about “following your dreams.”</p>
+<p>It’s more like balancing:</p>
+<ul>
+<li>🎯 your passion</li>
+<li>👨‍👩‍👧 your family’s expectations</li>
+<li>💸 your financial situation</li>
+</ul>
+<p>Research shows students often feel both inspired and pressured by their families. Some get guidance, while others feel stuck between what they want and what’s expected.</p>
+<p>😵 Common struggles:</p>
+<ul>
+<li>Feeling torn between two choices</li>
+<li>Being compared to others</li>
+<li>Choosing practicality over passion</li>
+<li>Not knowing enough about options</li>
+</ul>
+<p>But here’s the good part 👇 Most students eventually choose paths that match their own interests, even if family influence is strong.</p>
+<p>💡 So what helps?</p>
+<ul>
+<li>Open conversations with your family</li>
+<li>Guidance from teachers or mentors</li>
+<li>Exploring your options (don’t rush it!)</li>
+</ul>
+<p>✨ Final thought: Your future isn’t a one-time decision—it’s something you build over time. You’re allowed to change your mind and figure things out.</p>
 </div>
 </div>
 
@@ -228,12 +232,8 @@ Growth looks different for everyone.
 </footer>
 
 <script>
-/* DARK MODE */
-function toggleDarkMode(){
-  document.body.classList.toggle("dark");
-}
+function toggleDarkMode(){ document.body.classList.toggle("dark"); }
 
-/* EXPAND BLOG POSTS */
 function toggleBlog(id){
   const blog = document.getElementById(id);
   blog.style.display = blog.style.display === "block" ? "none" : "block";
