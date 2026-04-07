@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Career Talks Ph</title>
+
+<!-- Cute font for blog name -->
+<link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+
+<!-- Font Awesome for icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+
+<style>
+:root{
+  --bg:#fff7fb;
+  --text:#333;
+  --accent:#ff8fb1;
+  --card:#fff;
+}
+
+.dark{
+  --bg:#121212;
+  --text:#f1f1f1;
+  --card:#1e1e1e;
+}
+
+body{
+  margin:0;
+  font-family:'Poppins',sans-serif;
+  background:var(--bg);
+  color:var(--text);
+  transition:.3s;
+}
+
+header{
+  background:var(--accent);
+  color:white;
+  text-align:center;
+  padding:20px 10px;
+}
+
+header h1{
+  font-family:'Patrick Hand', cursive;
+  font-size:2.5em;
+  margin:5px 0;
+}
+
+header p{
+  margin:5px 0;
+}
+
+.socials a{
+  color:white;
+  margin:0 10px;
+  font-size:22px;
+}
+
+button.dark-toggle{
+  margin-top:10px;
+  padding:6px 12px;
+  border:none;
+  border-radius:20px;
+  cursor:pointer;
+}
+
+.container{
+  max-width:900px;
+  margin:auto;
+  padding:30px;
+}
+
+.card{
+  background:var(--card);
+  padding:20px;
+  border-radius:15px;
+  margin-bottom:20px;
+  box-shadow:0 5px 15px rgba(0,0,0,.1);
+  cursor:pointer;
+  transition:.3s;
+}
+
+.card:hover{
+  transform:scale(1.02);
+}
+
+.blog-content{
+  display:none;
+  margin-top:15px;
+}
+
+input, textarea{
+  width:100%;
+  padding:10px;
+  margin-top:10px;
+  border-radius:10px;
+  border:1px solid #ccc;
+  font-family:Poppins;
+}
+
+button.send{
+  margin-top:15px;
+  background:var(--accent);
+  border:none;
+  color:white;
+  padding:10px 15px;
+  border-radius:20px;
+  cursor:pointer;
+}
+
+button.send:hover{
+  opacity:.85;
+}
+
+footer{
+  text-align:center;
+  padding:20px;
+  opacity:.7;
+}
+
+</style>
+</head>
+<body>
+
+<header>
+<h1>Career Talks Ph</h1>
+<p>Guiding students through career choices 💼✨</p>
+
+<div class="socials">
+<a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+<a href="https://tiktok.com" target="_blank"><i class="fab fa-tiktok"></i></a>
+<a href="https://x.com" target="_blank"><i class="fab fa-x-twitter"></i></a>
+<a href="mailto:yourgmail@gmail.com"><i class="fas fa-envelope"></i></a>
+</div>
+
+<button class="dark-toggle" onclick="toggleDarkMode()">🌙 Dark Mode</button>
+</header>
+
+<div class="container">
+
+<!-- BLOG CARD 1 -->
+<div class="card" onclick="toggleBlog('blog1')">
+<h2>✨ Choosing a Course Without Panic</h2>
+<div id="blog1" class="blog-content">
+<p>
+Feeling pressured about college choices? You're not alone. Many students struggle
+between passion, practicality, and family expectations.
+</p>
+<p>
+Start by identifying your interests, strengths, and values. Remember: your course
+is a starting point, not your entire future.
+</p>
+</div>
+</div>
+
+<!-- BLOG CARD 2 -->
+<div class="card" onclick="toggleBlog('blog2')">
+<h2>📚 Student Survival Tips</h2>
+<div id="blog2" class="blog-content">
+<p>
+Student life can be overwhelming. Balancing academics, friendships, and expectations
+is hard.
+</p>
+<p>
+Take breaks, sleep properly, and avoid comparing your progress to others.
+Growth looks different for everyone.
+</p>
+</div>
+</div>
+
+<!-- MESSAGE SECTION -->
+<div class="card">
+<h2>💌 Send a Message</h2>
+<form onsubmit="sendMessage(event)">
+<input type="text" placeholder="Your Name" required>
+<input type="email" placeholder="Your Email" required>
+<textarea rows="5" placeholder="Your Message..." required></textarea>
+<button type="submit" class="send">Send Message</button>
+<p id="msgStatus"></p>
+</form>
+</div>
+
+</div>
+
+<footer>
+© 2026 Career Talks Ph — Made for students 🌷
+</footer>
+
+<script>
+/* DARK MODE */
+function toggleDarkMode(){
+  document.body.classList.toggle("dark");
+}
+
+/* EXPAND BLOG POSTS */
+function toggleBlog(id){
+  const blog = document.getElementById(id);
+  blog.style.display = blog.style.display === "block" ? "none" : "block";
+}
+
+/* MESSAGE FORM */
+function sendMessage(event){
+  event.preventDefault();
+  document.getElementById("msgStatus").innerText = 
+    "✅ Message sent! (Demo version — connect to backend later)";
+}
+</script>
+
+</body>
+</html>
