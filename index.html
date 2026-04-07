@@ -12,6 +12,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
 
 <style>
+/* ---------- COLORS ---------- */
 :root{
   --bg:#fff7fb;
   --text:#333;
@@ -25,6 +26,7 @@
   --card:#1e1e1e;
 }
 
+/* ---------- GLOBAL ---------- */
 body{
   margin:0;
   font-family:'Poppins',sans-serif;
@@ -33,6 +35,12 @@ body{
   transition:.3s;
 }
 
+a{
+  color:inherit;
+  text-decoration:none;
+}
+
+/* ---------- HEADER ---------- */
 header{
   background:var(--accent);
   color:white;
@@ -48,12 +56,17 @@ header h1{
 
 header p{
   margin:5px 0;
+  font-size:1em;
+}
+
+.socials{
+  margin:10px 0;
 }
 
 .socials a{
   color:white;
   margin:0 10px;
-  font-size:22px;
+  font-size:24px;
 }
 
 button.dark-toggle{
@@ -64,12 +77,14 @@ button.dark-toggle{
   cursor:pointer;
 }
 
+/* ---------- CONTAINER ---------- */
 .container{
   max-width:900px;
   margin:auto;
-  padding:30px;
+  padding:20px;
 }
 
+/* ---------- BLOG CARDS ---------- */
 .card{
   background:var(--card);
   padding:20px;
@@ -78,17 +93,26 @@ button.dark-toggle{
   box-shadow:0 5px 15px rgba(0,0,0,.1);
   cursor:pointer;
   transition:.3s;
+  overflow:hidden;
 }
 
 .card:hover{
   transform:scale(1.02);
 }
 
+/* ---------- BLOG CONTENT ---------- */
 .blog-content{
   display:none;
   margin-top:15px;
+  animation: slideDown 0.3s ease forwards;
 }
 
+@keyframes slideDown{
+  from{opacity:0; max-height:0;}
+  to{opacity:1; max-height:500px;}
+}
+
+/* ---------- FORM ---------- */
 input, textarea{
   width:100%;
   padding:10px;
@@ -106,18 +130,36 @@ button.send{
   padding:10px 15px;
   border-radius:20px;
   cursor:pointer;
+  width:100%;
 }
 
 button.send:hover{
   opacity:.85;
 }
 
+/* ---------- FOOTER ---------- */
 footer{
   text-align:center;
   padding:20px;
   opacity:.7;
 }
 
+/* ---------- RESPONSIVE ---------- */
+@media(max-width:600px){
+  header h1{
+    font-size:2em;
+  }
+  header p{
+    font-size:0.9em;
+  }
+  .socials a{
+    font-size:20px;
+    margin:0 5px;
+  }
+  .card{
+    padding:15px;
+  }
+}
 </style>
 </head>
 <body>
@@ -168,15 +210,14 @@ Growth looks different for everyone.
 </div>
 </div>
 
-<!-- MESSAGE SECTION -->
+<!-- CONTACT FORM -->
 <div class="card">
 <h2>💌 Send a Message</h2>
-<form onsubmit="sendMessage(event)">
-<input type="text" placeholder="Your Name" required>
-<input type="email" placeholder="Your Email" required>
-<textarea rows="5" placeholder="Your Message..." required></textarea>
+<form action="https://formspree.io/f/mnjowvgy" method="POST">
+<input type="text" name="name" placeholder="Your Name" required>
+<input type="email" name="email" placeholder="Your Email" required>
+<textarea name="message" rows="5" placeholder="Your Message..." required></textarea>
 <button type="submit" class="send">Send Message</button>
-<p id="msgStatus"></p>
 </form>
 </div>
 
@@ -196,13 +237,6 @@ function toggleDarkMode(){
 function toggleBlog(id){
   const blog = document.getElementById(id);
   blog.style.display = blog.style.display === "block" ? "none" : "block";
-}
-
-/* MESSAGE FORM */
-function sendMessage(event){
-  event.preventDefault();
-  document.getElementById("msgStatus").innerText = 
-    "✅ Message sent! (Demo version — connect to backend later)";
 }
 </script>
 
